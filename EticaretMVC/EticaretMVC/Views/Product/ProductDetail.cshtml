@@ -1,0 +1,58 @@
+﻿@model EticaretMVC.Models.DTO.ProductDTO
+@{
+    ViewBag.Title = "ProductDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="productdetailmain">
+    <div class="fader productdetailimg">
+        <img  src='@string.Format("/Content/Images/large/{0}", Model.Picture)'/>
+    </div>
+    <div class="productdetailtable">
+        <table cellpadding="20">
+            <tr>
+                <th>Product Name:</th>
+                <td>@Model.Name</td>
+            </tr>
+            <tr>
+                <th>Brand Name:</th>
+                <td>@Model.Brand.Name</td>
+            </tr>
+            <tr>
+                <th>Availability:</th>
+                @if (Model.Stock > 0)
+                {
+                    <td>In Stock</td>
+                }
+                else
+                {
+                    <td>No Stock</td>
+                }
+            </tr>
+            <tr>
+                <th>Price:</th>
+                <td>@string.Format("{0:c}", Model.Price) +KDV</td>
+            </tr>
+            <tr>
+                <th>Cut Price:</th>
+                <td>@string.Format("{0:c}", Model.Price * (decimal)(1 - Model.Discoount)) +KDV</td>
+            </tr>
+            @using (Html.BeginForm())
+            { 
+                <tr>
+                    <th>Quantity:</th>
+                    <td>@Html.EditorFor(model => model.Quantity)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Add To Cart" /></td>
+                </tr>
+            }
+        </table>
+
+
+
+    </div>
+
+</div>

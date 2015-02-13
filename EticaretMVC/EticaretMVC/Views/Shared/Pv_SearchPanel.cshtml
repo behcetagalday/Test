@@ -1,0 +1,19 @@
+﻿<div class="container1" style="position:absolute;left:270px;top:58px;">
+    @using (Html.BeginForm("ProductSearch","Product",FormMethod.Post))
+    { 
+	<div class="row">
+		<div class="col-lg-3">
+            <div  class="input-group custom-search-form" style="width:300px;">
+          <input type="text" data-search="aranacakdiv" data-searchpart="div" id="txtMenuSearch" class="form-control" placeholder="Search Products" name="search">
+              <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">
+              <span class="glyphicon glyphicon-search"></span>
+             </button>
+             </span>
+         
+             </div><!-- /input-group -->
+        </div>
+	</div>
+    }
+</div>
+

@@ -1,0 +1,28 @@
+﻿@model EticaretMVC.Models.DTO.UserDTO
+<div class="container">
+
+
+    <div id="user">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-signin" }))
+        {
+            @Html.ValidationSummary(true)
+            <h2 class="form-signin-heading">Please sign in</h2>
+            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", @placeholder = "User Name", required = "required" })
+
+            @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Password", required = "Lütfen Şifre Giriniz" })
+            @Html.ValidationMessageFor(x => x.Password)
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me">
+                Remember me
+       
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+        }
+    </div>
+
+</div>
+<!-- /container -->
+<script type="text/javascript">
+
+</script>

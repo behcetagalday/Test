@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+    <link href="~/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/examples/signin/signin.css" rel="stylesheet" />
+    <link href="~/examples/justified-nav/justified-nav.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="MainDİV">
+        <header>
+            <div id="logo" >
+                <h1>@Html.ActionLink("TEKNORAMA", "Index", "Home")</h1>
+                </></div>
+            @Html.Partial("~/Views/Shared/Pv_HeaderNavigation.cshtml")
+            @Html.Partial("~/Views/Shared/Pv_CartDetail.cshtml")
+            @Html.Partial("~/Views/Shared/Pv_SearchPanel.cshtml", new EticaretMVC.Models.DTO.ProductDTO())
+            @*loginmenugiris*@
+            @*  @Html.Partial("~/Views/Shared/Pv_LoginMenu.cshtml",new EticaretMVC.Models.DTO.UserDTO())*@
+
+            @*liginmenucıkıs*@
+
+            @*Categories Start*@
+            @Html.Partial("~/Views/Shared/Pv_CategoriesMenus.cshtml", new EticaretMVC.Models.Repository.CategoryService())
+
+            @*Categories END*@
+
+
+        </header>
+
+        <section id="renderbody">
+            @RenderBody()
+
+        </section>
+
+        <footer>
+        </footer>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+      
+            $("#txtMenuSearch").keyup(function () {
+                var filter = $(this).val().toLowerCase();
+                var $aranacak = $(this).data("search");
+                $("#aranacakdiv div").each(function () {
+                    if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                        $(this).fadeOut();
+                    } else {
+                        $(this).show();
+                    }
+                });
+            });
+            $(".Kapat").hide();
+
+        });
+        function ac(deger) {
+          
+                $(".Kapat").hide();
+                $("#" + deger).show("1000");
+           
+            
+          
+            
+           
+        };
+        function kapat(deger) {
+            $(".Kapat").hide("5000");
+          
+
+
+        };
+        $(function () {
+            $("#login a").click(function (e) {
+
+                e.preventDefault();
+            })
+        });
+        $(function () {
+            $("#login a").click(function () {
+
+                $(".container").show();
+
+            })
+        });
+    </script>
+   
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<EticaretMVC.Models.DTO.BrandDTO> product = ViewData["Brands"] as List<EticaretMVC.Models.DTO.BrandDTO>;
+}
+<div class="productsdiv">
+    <div class="productmain">
+
+        @foreach (var item in (Session["Products"] as List<EticaretMVC.Models.DTO.ProductDTO>))
+        { 
+     
+            <a href="#">
+                <div class="productdiv">
+                    <div class="productimg">
+                        <img src='@string.Format("/Content/Images/small/{0}", item.Picture)' />
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div style="text-align: center">
+                        <h3>@Html.ActionLink(item.Name, "ProductDetail", "Product", new { id = item.ID }, null)</h3>
+                        <br />
+                        <div>@item.Category.Name
+                        </div>
+                        <br />
+                        <div>@item.Brand.Name</div>
+                        <div>@string.Format("{0:c}", item.Price) +KDV</div>
+                    </div>
+                </div>
+            </a>
+
+        }
+
+    </div>
+
+
+
+
+    @if (product != null)
+    {
+           <h4>Markaya Göre Filtrele</h4>
+        <ul>
+            @foreach (var item in product)
+            {
+                using (Html.BeginForm())
+                {
+                <li ><a style="color:#ffd800;font: bold 14px arial, helvetica, sans-serif" href="@Url.Action("ProductBrand", "Product", new { BrandId = item.ID, CategoryId = Session["CategoryId"] })"><span class="glyphicon glyphicon-ok-circle">@item.Name (@item.ProductCount)</span></a></li>
+             
+               
+               
+                }
+
+            }
+
+        </ul>
+          <ul>
+              @foreach (var item in product)
+	{
+        using (Html.BeginForm())
+        { 
+         <li><input type="checkbox" value="@item.ID" />@item.Name</li>
+        }
+	}
+          </ul>
+    }
+
+</div>
+
+
+<script type="text/javascript">
+
+    $("input").on(change,function () {
+
+        var BrandId = $(this).val();
+        alert(BrandId);
+        $.ajax({
+            url: "/ProductBrand/Product",
+            type: 'get',
+            contentType: 'application/json',
+            data: BrandId,
+            datatype: 'json'
+
+
+        });
+        
+    });
+
+</script>

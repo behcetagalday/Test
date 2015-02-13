@@ -1,0 +1,35 @@
+﻿@model EticaretMVC.Models.DTO.UserDTO
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("~/Views/Shared/Pv_SpecialProduct.cshtml",new EticaretMVC.Models.Repository.ProductService())
+@Html.Partial("~/Views/Shared/Pv_LatestProduct.cshtml",new EticaretMVC.Models.Repository.ProductService())
+
+
+@*<div class="container">
+
+
+    <div style="width: 400px; height: 300px; background-color: #ffd800; left: 400px; position: absolute">
+    <form class="form-signin" role="form" >
+            @Html.ValidationSummary(true)
+            <h2 class="form-signin-heading">Please sign in</h2>
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = "User Name",required="required"})
+
+            @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @placeholder = "Password" ,required="Lütfen Şifre Giriniz"})
+            @Html.ValidationMessageFor(x => x.Password)
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me">
+                Remember me
+       
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign in</button>
+     </form>
+    </div>
+
+</div>*@
+
+
+

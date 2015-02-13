@@ -1,0 +1,58 @@
+﻿@model EticaretMVC.Models.DTO.UserDTO
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{ 
+    <fieldset>
+        <legend>New Create User</legend>
+        @Html.ValidationSummary(true)
+        <div>
+            <div class="userform">@Html.DisplayNameFor(x => x.UserName)</div>
+            @Html.TextBoxFor(x => x.UserName, new { @size = "40" })
+            @Html.ValidationMessageFor(x => x.UserName)
+        </div>
+        <br />
+        <div>
+            <div class="userform">@Html.DisplayNameFor(x => x.Password)</div>
+            @Html.PasswordFor(x => x.Password, new { @size = "40" })
+            @Html.ValidationMessageFor(x => x.Password)
+        </div>
+        <br />
+        <div>
+            <div class="userform">@Html.DisplayNameFor(x => x.FirstName)</div>
+            @Html.TextBoxFor(x => x.FirstName, new { @size = "40" })
+            @Html.ValidationMessageFor(x => x.FirstName)
+        </div>
+        <br />
+        <div>
+            <div class="userform">@Html.DisplayNameFor(x => x.LastName)</div>
+            @Html.TextBoxFor(x => x.LastName, new { @size = "40" })
+            @Html.ValidationMessageFor(x => x.LastName)
+        </div>
+        <br />
+        <div>
+            <div class="userform">@Html.DisplayNameFor(x => x.Email)</div>
+            @Html.TextBoxFor(x => x.Email, new { @size = "40" })
+            @Html.ValidationMessageFor(x => x.Email)
+
+        </div>
+        <br />
+        <div>
+            <div class="userform">@Html.DisplayNameFor(x => x.Phone)</div>
+            @Html.TextBoxFor(x => x.Phone, new { @size = "40" })
+            @Html.ValidationMessageFor(x => x.Phone)
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="Create User" class="usersubmit" />
+        </div>
+    </fieldset>
+
+}
+
+

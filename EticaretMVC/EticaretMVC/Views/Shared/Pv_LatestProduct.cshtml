@@ -1,0 +1,26 @@
+﻿@model EticaretMVC.Models.Repository.ProductService
+
+<div id="aranacakdiv" class="latestproductmain">
+    <h2>LATEST PRODUCTS</h2>
+    @foreach (var item in Model.GetLatesProduct())
+    { 
+        <a href="#">
+            <div class="latestproductdiv">
+                <div class="latestproductimg">
+                    <img src='@string.Format("/Content/Images/small/{0}", item.Picture)' />
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="latestproductlink">
+                    <h3>@Html.ActionLink(item.Name, "ProductDetail", "Product", new { id = item.ID }, null)</h3>
+                    <br />
+
+                    <div>@string.Format("{0:c}", item.Price) +KDV</div>
+                </div>
+            </div>
+        </a>
+
+    }
+
+</div>

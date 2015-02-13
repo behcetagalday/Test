@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "ProductSearch";
+}
+
+<h2>ProductSearch</h2>
+<div>
+
+
+    @foreach (var item in (ViewData["search"] as List<EticaretMVC.Models.DTO.ProductDTO>))
+    {
+        <a href="#">
+            <div class="productsearch">
+                <div class="productsearchimg">
+                    <img src='@string.Format("/Content/Images/small/{0}", item.Picture)' />
+                </div>
+                <div class="productsearchdiv">
+                    <h3>@Html.ActionLink(item.Name, "ProductDetail", "Product", new { id = item.ID }, null)</h3>
+                    <br />
+                    <div>@item.Category.Name
+                    </div>
+                    <br />
+                    <div>@item.Brand.Name</div>
+                    <div>@string.Format("{0:c}", item.Price)</div>
+                </div>
+            </div>
+        </a>
+       
+}
+
+
+
+</div>

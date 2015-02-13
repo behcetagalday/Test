@@ -1,0 +1,23 @@
+﻿@model EticaretMVC.Models.Repository.ProductService
+
+<div id="aranacakdiv" class="specialproduct">
+    <h2>Special Products</h2>
+    @foreach (var item in Model.GetSpecialProduct())
+    {
+        <a href="#">
+            <div class="specialproductdiv ">
+                <div class="specialproductimg">
+                    <img src='@string.Format("/Content/Images/small/{0}", item.Picture)' />
+                </div>
+                <div class="specialproductlink">
+                    <h3>@Html.ActionLink(item.Name, "ProductDetail", "Product", new { id = item.ID }, null)</h3>
+                    <br />
+
+                    <div>@string.Format("{0:c}", item.Price)</div>
+                </div>
+            </div>
+        </a>
+
+    }
+
+</div>

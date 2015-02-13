@@ -1,0 +1,10 @@
+﻿@{
+    List<EticaretMVC.Models.DTO.ProductDTO> cart = EticaretMVC.Models.Repository.CartService.GetCarts();}
+<div class="cartdetailmain">
+    <div id="cartdetail"><span class="glyphicon glyphicon-shopping-cart"></span><span>@cart.Sum(x => x.Quantity) items</span></div>
+    <div><span>@string.Format("{0:c}", cart.Sum(x => x.Price * x.Quantity * (decimal)(1 - x.Discoount)))</span></div>
+
+
+
+
+</div>

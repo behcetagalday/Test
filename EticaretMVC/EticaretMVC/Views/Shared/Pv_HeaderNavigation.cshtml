@@ -1,0 +1,23 @@
+﻿ <nav id="ustsol">
+                <ul>
+                    <li >@Html.ActionLink("Home","Index","Home")</li>
+                    @if(Request.IsAuthenticated)
+        {
+         <li style="line-height:40px;">
+             HELLO @User.Identity.Name
+            </li>
+            <li>
+                @Html.ActionLink("Logout", "logout", "Login")
+            </li>
+        }
+        
+        else
+        {
+          <li>@Html.ActionLink("Log in","Account","Login")</li>
+                      
+        }
+                  <li>@Html.ActionLink("Shopping Cart","ShoppingCart","Carts")</li>    
+                    <li><a >About As</a></li>
+                    <li><a>Contact</a></li>
+                </ul>
+            </nav>

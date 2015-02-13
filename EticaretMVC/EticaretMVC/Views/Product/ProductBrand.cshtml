@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "ProductBrand";
+}
+
+
+<div class="productmain">
+
+    @foreach (var item in (Session["ProductBrand"] as List<EticaretMVC.Models.DTO.ProductDTO>))
+    { 
+     
+        <a href="#">
+            <div class="productdiv ">
+                <div class="productimg">
+                    <img src='@string.Format("/Content/Images/small/{0}", item.Picture)' />
+                </div>
+                <br />
+                <br />
+                <br />
+                <div style="text-align: center">
+                    <h3>@Html.ActionLink(item.Name, "ProductDetail", "Product", new { id = item.ID }, null)</h3>
+                    <br />
+                    <div>@item.Category.Name
+                    </div>
+                    <br />
+                    <div>@item.Brand.Name</div>
+                    <div>@string.Format("{0:c}", item.Price) +KDV</div>
+                </div>
+            </div>
+        </a>
+
+    }
+
+</div>

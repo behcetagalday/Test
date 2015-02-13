@@ -1,0 +1,42 @@
+﻿@model EticaretMVC.Models.Repository.CategoryService
+
+
+<div class="masthead" id="masthead">
+
+    <ul class="nav nav-justified">
+        @foreach (var TopCat in Model.GetALL())
+        {
+            <li><a href='javascript:ac(@TopCat.ID)' >@TopCat.Name</a>
+
+
+                <div id='@TopCat.ID' class="Kapat" >
+                    <h4>Inside @TopCat.Name</h4>
+
+                    <ul>
+                        @foreach (var SubCat in Model.GetALLTopCategories(TopCat.ID))
+                        {
+                            <li class="Categoryli"><span class="glyphicon glyphicon-star"></span>@Html.ActionLink(SubCat.Name, "Products", "Product", new { CategoryId = SubCat.ID }, null)</li>
+                             
+                          
+                        }
+                    </ul>
+
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <h4>@TopCat.Name Brands</h4>
+
+                    <ul>
+                        @foreach (var Brand in Model.GetAllBrandInCategory(TopCat.ID))
+                        {
+                            <li class="Categoryli"><span class="glyphicon glyphicon-star"></span>@Html.ActionLink(Brand.Name, "Products", "Product", new { CategoryId = TopCat.ID, BrandId = Brand.ID }, null)</li>
+                        }
+                    </ul>
+                </div>
+            </li>
+   
+        }
+    </ul>
+</div>

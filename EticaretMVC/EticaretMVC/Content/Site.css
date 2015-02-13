@@ -1,0 +1,344 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #fff;
+    background-color: #0ebbf3 !important;
+text-align:center;
+
+}
+
+header, footer, nav, section {
+    display: block;
+}
+ul, li, a, div {
+margin:0px;
+padding:0px;
+list-style-type:none;
+text-decoration:none;
+
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 2px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: black;
+    background-color:yellow;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+     display: none;
+}
+#MainDİV {
+   width:960px;
+    position:relative;
+    text-align:left;
+    margin:0 auto;
+}
+header {
+
+     width:960px;
+  
+height:150px;
+position:relative;
+background-color:black;
+color:#f00;
+padding:0px;
+margin:-20px 0 0 0;
+
+}
+
+#ustsol {
+    width:530px;
+    height:40px;
+position:absolute;
+margin:0 0 125px 430px;
+
+ 
+}
+    #ustsol ul {
+   list-style:none;
+    }
+#ustsol ul li {
+
+    float:left;
+
+
+list-style:none;
+
+}
+    #ustsol ul li a{
+        padding:5px;
+        margin:0px 12px 5px 0;
+         display:block;
+    list-style-type:none;
+    text-decoration:none;
+    color:#f70c0c;
+ font:bold 14px arial, helvetica, sans-serif;
+ line-height:30px;
+    }
+    #ustsol ul li a:hover{
+        background-color:#f00;
+        color:#ffd800;
+    }
+   
+
+
+#masthead {
+position:relative;
+top:99px;
+z-index:4;
+
+}
+.Kapat {
+    position:absolute;
+    border:1px solid black;
+    border-radius:5px;
+    width:400px ;
+    height:350px ;
+background-color:#fee;
+
+
+}
+    .Kapat ul li a {
+   
+    color:black !important;
+    }
+    .Kapat h4 {
+    text-align:center;
+    
+    }
+#renderbody {
+width:960px;
+
+
+}
+
+.custom-search-form{
+    margin-top:5px;
+}
+
+.fader img {
+        /* Stretching the images to fill whole elements */
+        width:       100%;
+        height:      100%;
+
+        /* Preventing blank space below the image */
+        line-height: 0;
+
+        /* A one-second transition was to disturbing for me */
+        -webkit-transition: all 0.3s ease;
+        -moz-transition:    all 0.3s ease;
+        -o-transition:      all 0.3s ease;
+        -ms-transition:     all 0.3s ease;
+        transition:         all 0.3s ease; }
+
+        .fader img:hover {
+            /* Making images appear bigger and transparent on mouseover */
+          
+            width:   120%;
+            height:  120%;
+   -webkit-transform:scale(1,1);
+    -moz-transform:scale(1,1);
+    -ms-transform:scale(1,1);
+    -o-transform:scale(1,1);
+    transform:scale(1,1);
+        }
+#logo {
+position: absolute;
+ margin-left: 30px;
+  color: red !important
+}
+#logo h1 a {
+text-decoration:none !important;
+color:red !important;
+}
+.Categoryli {
+
+    float: left;
+     margin: 10px;
+}
+.productmain {
+position: absolute;
+ width: 900px; 
+ top: 200px;
+  float: left;
+  margin-right:5px;
+}
+.productimg {
+    width: 100px;
+     height: 100px;
+      text-align: center;
+       padding: 10px;
+      
+}
+.productdiv {
+width: 200px;
+ height: 350px;
+  background-color: #fff;
+   float: left; 
+   border: 1px solid
+
+}
+.productsdiv {
+float: left;
+ position: relative;
+}
+.productdetailmain {
+position: absolute;
+ width:960px;
+  background-color:#ffffff;
+ height: 600px;
+
+}
+.productdetailimg {
+width: 400px;
+ height: 400px;
+  background-color: #ffffff;
+   float: left;
+    margin: 20px;
+
+}
+.productdetailtable {
+float: right;
+ width: 500px;
+  height: 400px;
+
+}
+.productsearch {
+    width:200px;
+    height:350px;
+    background-color:#fff;
+    float:left;
+    border:1px solid
+
+}
+.productsearchimg {
+padding:10px;
+
+}
+.productsearchdiv {
+text-align:center;
+
+}
+.latestproductmain {
+position:absolute;
+width:900px;
+height:1000px;
+top:1300px;
+
+}
+.latestproductdiv {
+width:200px;
+height:280px;
+background-color:#fff;
+float:left;
+border:1px solid;
+margin:3px;
+
+}
+.latestproductimg {
+width:100px;
+height:100px;
+text-align:center;
+padding:10px;
+
+}
+.latestproductlink {
+text-align:center;
+
+}
+.specialproduct {
+position:absolute;
+width:900px;
+height:1000px;
+
+}
+.specialproductdiv {
+    width:200px;
+    height:280px;
+    background-color:#fff;
+    float:left;
+    border:1px solid;
+    margin:3px;
+
+}
+.specialproductimg {
+    padding:10px;
+}
+.specialproductlink {
+    text-align:center
+
+}
+#user {
+width: 400px; 
+height: 400px;
+ background-color: #ffd800;
+  left: 400px;
+   position: fixed;
+   z-index:2
+
+}
+.cartdetailmain {
+position: absolute;
+ left: 750px;
+  top: 70px;
+   width: 200px;
+}
+#cartdetail {
+    float: left;
+     margin-right: 20px;
+}
+    #cartdetail span {
+    margin-right: 10px
+    }
+.userform {
+font: bold 20px arial, helvetica, sans-serif
+
+}
+.usersubmit {
+    width: 150px;
+     font-size: 20px;
+      font: bold;
+
+}
